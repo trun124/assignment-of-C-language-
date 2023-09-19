@@ -1,0 +1,802 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset161 Times New Roman;}{\f2\fnil\fcharset0 Cambria;}{\f3\fnil\fcharset0 Calibri;}{\f4\fnil Times New Roman;}{\f5\fnil\fcharset0 Arial;}{\f6\fnil\fcharset0 Arial Unicode MS;}{\f7\fnil\fcharset1 Cambria Math;}{\f8\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mmathFont7\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sl360\slmult1\qc\ul\b\f0\fs40\lang9 Assignment-01 \par
+NAME- TARUN BHARADWAJ\par
+ROLL NO.- 65 \par
+SECTION- (AU)2\par
+
+\pard\sl360\slmult1\qj\ulnone\fs24 Q1. Write a C program for calculating the price of a product after adding the sales tax to its original price. Where rate of tax and price is inputted by user.\par
+\b0 ANS:- #include <stdio.h>\par
+#include<conio.h>\par
+int main() \{\par
+    float originalPrice;\par
+\tab  float taxRate;\par
+\tab  float totalPrice;\par
+\tab  \par
+    printf("Enter the original price of the product: "); \par
+    scanf("%f", &originalPrice);\par
+    \par
+    printf("Enter the sales tax rate (in percentage): ");\par
+    scanf("%f", &taxRate);\par
+\par
+    totalPrice = originalPrice + (originalPrice * (taxRate / 100.0));\par
+\par
+    printf("Total price after tax: %.2f\\n", totalPrice);\par
+\par
+    return 0;\par
+\}\par
+\par
+\b Q2. Write a C program to calculate the weekly wages of an employee. The pay depends on wages per hour and number of hours worked. Moreover, if the employee has worked for more than 30 hours, then he or she gets twice the wages per hour, for every extra hour that he or she has worked.\par
+\b0 ANS:- #include <stdio.h>\par
+#include<conio.h>\par
+int main() \par
+\{\par
+    float hourlyWage; \par
+    float weeklyWages;\par
+    int hoursWorked;\par
+\par
+    printf("Enter the hourly wage: ");\par
+    scanf("%f", &hourlyWage);\par
+\par
+    printf("Enter the number of hours worked: ");\par
+    scanf("%d", &hoursWorked);\par
+\par
+    if (hoursWorked <= 30) \{\par
+        weeklyWages = hourlyWage * hoursWorked;\par
+    \} \par
+\tab else \{\par
+        weeklyWages = (hourlyWage * 30) + ((hoursWorked - 30) * (hourlyWage * 2));\par
+    \}\par
+\par
+    printf("Weekly wages: ruppes %.2f\\n", weeklyWages);\par
+\par
+    return 0;\par
+\}\par
+\b Q.3 Mr. X goes to market for buying some fruits and vegetables. He is having a currency of Rs 500 with him for marketing. From a shop, he purchases 2.0 kg Apple priced Rs. 50.0 per kg, 1.5 kg Mango priced Rs.35.0 per kg, 2.5 kg Potato priced Rs.10.0 per kg, and 1.0 kg Tomato priced Rs.15 per kg. He gives the currency of Rs. 500 to the shopkeeper. Find out the amount shopkeeper will return to X by writing a C program.\par
+\b0 ANS:-  #include <stdio.h>\par
+#include<conio.h>\par
+int main() \par
+\{\par
+    float wallet = 500.0;\par
+    float totalCost = 0.0;\par
+\par
+    float applePrice = 50.0;\par
+    float mangoPrice = 35.0;\par
+    float potatoPrice = 10.0;\par
+    float tomatoPrice = 15.0;\par
+\par
+    float appleQty = 2.0;\par
+    float mangoQty = 1.5;\par
+    float potatoQty = 2.5;\par
+    float tomatoQty = 1.0;\par
+\par
+    totalCost = (applePrice * appleQty) + (mangoPrice * mangoQty) + (potatoPrice * potatoQty) + (tomatoPrice * tomatoQty);\par
+\par
+    if (totalCost <= wallet) \par
+\tab\{\par
+        float amountToReturn = wallet - totalCost;\par
+        printf("Mr. X will receive Rs. %.2f in change.\\n", amountToReturn);\par
+    \} else \{\par
+        printf("Mr. X does not have enough money to make the purchase.\\n");\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\b Q4.Write a C program to print your name, date of birth and mobile number in 3 different lines.\par
+\b0 ANS:- #include<stdio.h>\par
+#include<conio.h>\par
+int main()\par
+\{\par
+printf("name:- sujal goyal\\n");\par
+printf("dob:- 15 march 2004\\n");\par
+printf("mobile no:- 7627093923");\par
+return 0;\par
+\}\par
+\b Q5.Write a program to read an integer, a character and a float value from keyboard and display the same in different lines on the screen.\b0\par
+ANS:- #include <stdio.h>\par
+\par
+int main() \{\par
+    int integerNumber;\par
+    char character;\par
+    float floatValue;\par
+\par
+    printf("Enter an integer: ");\par
+    scanf("%d", &integerNumber);\par
+\par
+    printf("Enter a character: ");\par
+    scanf(" %c", &character); \par
+\par
+    printf("Enter a float: ");\par
+    scanf("%f", &floatValue);\par
+\par
+    printf("Integer: %d\\n", integerNumber);\par
+    printf("Character: %c\\n", character);\par
+    printf("Float: %.2f\\n", floatValue);\par
+\par
+    return 0;\par
+\}\par
+\b Q6.Write a program to print the following line ( Assume the total value is contained in a variable named cost)\par
+The sales total is : $ 172.53\par
+\b0  ANS:-\par
+#include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    double cost = 172.53;\par
+\par
+    printf("The sales total is : $ %.2lf\\n", cost);\par
+\par
+    return 0;\par
+\}\par
+\b Q7.Raju got 6 and half apples from each of Raghu, Sheenu and Akash. He wants to know how many apples he has in total without adding them. Write a program which could help Raju in doing this.\par
+\b0  ANS:-\par
+#include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    int apples_from_each = 6;\par
+    int num_people = 3;\par
+\par
+    int total_apples = apples_from_each * num_people;\par
+\par
+    printf("Raju has a total of %d apples without adding them manually.\\n", total_apples);\par
+\par
+    return 0;\par
+\}\par
+\b Q8.Write a program that prints the floating point value in exponential format correct to two decimal places.\par
+\b0\par
+ANS:- #include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    double floatValue = 12345.6789; // Replace this with your desired floating-point value\par
+\par
+    printf("Floating-point value in exponential format: %.2e\\n", floatValue);\par
+\par
+    return 0;\par
+\}\par
+\b Q9.Write a program to input and print your mobile number (i.e. of 10 digits). \b0\par
+ANS:- #include <stdio.h>\par
+#inculde<conio.h>\par
+\par
+int main() \{\par
+    char mobileNumber[11];\par
+\par
+    printf("Please enter your 10-digit mobile number: ");\par
+    scanf("%s", mobileNumber);\par
+\par
+    \par
+    if (strlen(mobileNumber) == 10) \{\par
+        \par
+        printf("Your mobile number is: %s\\n", mobileNumber);\par
+    \} else \{\par
+        printf("Invalid input. Please enter a 10-digit mobile number.\\n");\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\b Q10.The population of a city is 30000. It increases by 20 % during first year and 30% during the second year. Write a program to find the population after two years? (Ans: 46800)\par
+\b0 ANS:-#include <stdio.h> \par
+#include<conio.h>\par
+\par
+int main() \{\par
+    int initialPopulation = 30000;\par
+    double increasePercentage1 = 0.20; \par
+    double increasePercentage2 = 0.30; \par
+\par
+    int populationAfterFirstYear = initialPopulation + (int)(initialPopulation * increasePercentage1);\par
+\par
+    \par
+    int populationAfterSecondYear = populationAfterFirstYear + (int)(populationAfterFirstYear * increasePercentage2);\par
+\par
+    printf("Population after two years: %d\\n", populationAfterSecondYear);\par
+\par
+    return 0;\par
+\}\par
+\b Q11. Write a program to find the ASCII value of a character. \par
+\b0 ANS:-\par
+#include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    char character;\par
+\par
+    \par
+    printf("Enter a character: ");\par
+    scanf("%c", &character);\par
+    printf("ASCII value of '%c' is %d\\n", character, character);\par
+\par
+    return 0;\par
+\}\par
+\b Q12. Write a program to calculate salary of an employee, given his basic pay (entered by user), HRA=15% of the basic pay and TA=20% of the basic pay. \par
+\b0 ans:- #include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    double basicPay, hra, ta, salary;\par
+\par
+    \par
+    printf("Enter the basic pay: ");\par
+    scanf("%lf", &basicPay);\par
+\par
+    hra = 0.15 * basicPay;\par
+    ta = 0.20 * basicPay;\par
+\par
+    \par
+    salary = basicPay + hra + ta;\par
+\par
+    \par
+    printf("Basic Pay: %.2lf\\n", basicPay);\par
+    printf("HRA: %.2lf\\n", hra);\par
+    printf("TA: %.2lf\\n", ta);\par
+    printf("Total Salary: %.2lf\\n", salary);\par
+\par
+    return 0;\par
+\b\}\b0\par
+\b Q13. Write a program to find  the slope of a line and angle of inclination that passes through two points P and Q with coordinates (xp, yp) and (xq, yq) respectively. \par
+\b0 ANS:- #include <stdio.h>\par
+#include<conio.h>\par
+#include <math.h>\par
+\par
+int main() \{\par
+    double xp, yp, xq, yq;\par
+    \par
+    printf("Enter the coordinates of point P (xp yp): ");\par
+    scanf("%lf %lf", &xp, &yp);\par
+    \par
+    printf("Enter the coordinates of point Q (xq yq): ");\par
+    scanf("%lf %lf", &xq, &yq);\par
+    \par
+    double slope = (yq - yp) / (xq - xp);\par
+    \par
+    double angle_rad = atan(slope);\par
+    double angle_deg = angle_rad * (180.0 / M_PI);\par
+    \par
+    printf("Slope of the line: %.2lf\\n", slope);\par
+    printf("Angle of inclination (in degrees): %.2lf\\n", angle_deg);\par
+    \par
+    return 0;\par
+\}\par
+\b Q14. The SPI (Semester Performance Index) is a weighted average of the grade points earned by a student in all the courses he registered for in a semester. If the grade points associated with the letter grades awarded to a student are g1, g2, g3,\'85\'85.gk etc. and the corresponding credits are c1, c2, c3,.\'85..ck, the SPI is  given by:\par
+\par
+Where, k is the number of courses for which the candidate remains registered for during the semester/ trimester. Write a program in C to calculate SPI for k =5. \par
+\b0 ans:- \par
+#include <stdio.h> \par
+#include<conio.h>\par
+\par
+int main() \{\par
+    int k = 5; // Number of courses\par
+    double grade_points[] = \{3.5, 4.0, 3.7, 3.0, 3.8\}; \par
+    int credits[] = \{3, 4, 3, 2, 3\}; \par
+    double spi = 0.0;\par
+    int total_credits = 0;\par
+\par
+    \par
+    for (int i = 0; i < k; i++) \{\par
+        spi += (grade_points[i] * credits[i]);\par
+        total_credits += credits[i];\par
+    \}\par
+\par
+    if (total_credits > 0) \{\par
+        spi /= total_credits;\par
+        printf("SPI for %d courses = %.2lf\\n", k, spi);\par
+    \} else \{\par
+        printf("Error: Total credits cannot be zero.\\n");\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\b Q 15. Write a program to calculate the frequency (f) of a given wave with wavelength (\f1\lang1032\'eb) and speed (c), where c=\'eb*f.\f0\lang1033  \par
+\b0 ANS:- #include <stdio.h>  \par
+#include<conio.h>\par
+\par
+int main() \{\par
+    double wavelength, speed, frequency;\par
+\par
+    \f1\lang1032\par
+    printf("Enter the wavelength (\'eb) in meters: ");\par
+    scanf("%lf", &wavelength);\par
+\par
+    \par
+    printf("Enter the speed (c) in meters per second: ");\par
+    scanf("%lf", &speed);\par
+\par
+    \par
+    if (wavelength != 0) \{\par
+        frequency = speed / wavelength;\par
+        printf("Frequency (f) = %.2lf Hz\\n", frequency);\par
+    \} else \{\par
+        printf("Error: Wavelength cannot be zero.\\n");\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\b\f0\lang9 Q 16. A car travelling at 30 m/s accelerates steadily at 5 m/s2 for a distance of 70 m. What is the final velocity of the car? [Hint: v2 = u2 + 2as] \par
+\b0 ANS:-#include <stdio.h>\par
+#include <math.h>\par
+\par
+int main() \{\par
+    double initial_velocity = 30.0; // Initial velocity in m/s\par
+    double acceleration = 5.0;     // Acceleration in m/s^2\par
+    double distance = 70.0;        // Distance in meters\par
+    double final_velocity;\par
+\par
+    // Calculate the final velocity using the formula v^2 = u^2 + 2as\par
+    final_velocity = sqrt(pow(initial_velocity, 2) + 2 * acceleration * distance);\par
+\par
+    printf("The final velocity of the car is %.2lf m/s\\n", final_velocity);\par
+\par
+    return 0;\par
+\}\par
+\b Q 17.A horse accelerates steadily from rest at 4 m/s2 for 3s. (a) What is its final velocity? (b) How far has it travelled? [Hint: (a) v = u + at (b)  s = ut + \'bdat2 ] \par
+\b0 ANS:- #include <stdio.h>\par
+\par
+int main() \{\par
+    double initial_velocity = 0.0; \par
+    double acceleration = 4.0;     \par
+    double time = 3.0;             \par
+    double final_velocity, distance;\par
+    final_velocity = initial_velocity + (acceleration * time);\par
+    distance = (initial_velocity * time) + (0.5 * acceleration * time * time);\par
+\par
+    printf("Final velocity of the horse: %.2lf m/s\\n", final_velocity);\par
+    printf("Distance traveled by the horse: %.2lf meters\\n", distance);\par
+\par
+    return 0;\par
+\}\par
+\b Q 18.\f2  Write a program to find the sum of your four last digit of your university roll number . \par
+\b0 ans:- #include <stdio.h>\par
+\par
+int main() \{\par
+    \par
+    char rollNumber[] = "GLA2023-14070032";\par
+    int sum = 0;\par
+\par
+    \par
+    for (int i = 4; i < 8; i++) \{\par
+        sum += (rollNumber[i] - '0'); // Convert character to integer\par
+    \}\par
+\par
+    printf("Sum of the last four digits of your university roll number: %d\\n", sum);\par
+\par
+    return 0;\par
+\}\par
+\b Q19. Write a program to initialize your height and weight in cm. and kgs respectively demonstrating compile time initialization and convert them in feets and pounds respectively.  Note :- 1 cm = 0.393701inch , 1 Kg = 2.20462\par
+\b0 ANS:- #include <stdio.h>\par
+\par
+int main() \{\par
+    double height_cm = 175.0; \par
+    double weight_kg = 70.0;  \par
+\par
+    const double CM_TO_INCH = 0.393701;\par
+    const double KG_TO_POUND = 2.20462;\par
+\par
+    double height_feet = height_cm * CM_TO_INCH / 12.0;\par
+\par
+    double weight_pound = weight_kg * KG_TO_POUND;\par
+\par
+    printf("Your height is %.2lf cm, which is %.2lf feet.\\n", height_cm, height_feet);\par
+    printf("Your weight is %.2lf kg, which is %.2lf pounds.\\n", weight_kg, weight_pound);\par
+\par
+    return 0;\par
+\}\par
+\b\f0 Q 20 . Code the variable declarations for each of following:\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li360\sl240\slmult1\qj\b0 A character variable named option. \par
+{\pntext\f8\'B7\tab}\b ANS:- char option;                // A character variable named option\b0\par
+{\pntext\f8\'B7\tab}An integer variable sum initialized to 0\b\par
+{\pntext\f8\'B7\tab}int sum = 0;               // An integer variable sum initialized to 0\b0\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li360\sl360\slmult1\qj A floating point variable, product, initialized to 1 \b\par
+{\pntext\f8\'B7\tab}float product = 1.0;       // A floating-point variable product initialized to 1.0\b0\par
+{\pntext\f8\'B7\tab}\par
+
+\pard\sl360\slmult1\qj\b Q21. Write a program that reads nine integers. Display these numbers by printing three numbers in a line separated by commas\b0 . \par
+ANS:- #include <stdio.h>\par
+\par
+int main() \{\par
+    int numbers[9]; // Declare an array to store nine integers\par
+\par
+    // Input nine integers\par
+    printf("Enter nine integers, one at a time:\\n");\par
+    for (int i = 0; i < 9; i++) \{\par
+        scanf("%d", &numbers[i]);\par
+    \}\par
+\par
+    // Display the numbers in groups of three\par
+    printf("Numbers in groups of three:\\n");\par
+    for (int i = 0; i < 9; i++) \{\par
+        printf("%d", numbers[i]);\par
+        if ((i + 1) % 3 == 0) \{\par
+            printf("\\n"); // Print a newline after every three numbers\par
+        \} else \{\par
+            printf(", "); // Print a comma and space between numbers\par
+        \}\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\b Q22. What are header files and what are its uses in C programming? \b0\par
+ANS:- #include<stdio.h>\par
+#include<conio.h\b >\b0\par
+\b Q23. What will be the output of following program?\par
+
+\pard\li720\sl240\slmult1\qj #include<stdio.h>\par
+int main()\par
+\{   int num=070;\par
+printf(\ldblquote %d\\t%o\\t%x\rdblquote ,num,num,num);\par
+\} \par
+\b0 ANS:- 50    70    38  \par
+\par
+\par
+\b Q 24. What will be the output of following program?\par
+#include <stdio.h>\par
+
+\pard\sl360\slmult1\qj\par
+
+\pard\fi720\sl240\slmult1\qj void main() \par
+\{\par
+int x = printf("GLA UNIVERSITY");\par
+
+\pard\sl240\slmult1\qj    \tab printf("%d", x);\par
+  \tab  \} \par
+\b0 ANS:- GLA UNIVERSITY\b\par
+\b0\par
+
+\pard\sa160\sl259\slmult0\b\f3\fs22 Question-25. \f0\fs24 What are library functions? List any four library functions.\f3\fs22\par
+\b0  ANS:-  Library functions, also known as standard library functions, are pre-defined functions provided by the C programming language to perform common tasks. These functions are part of the C standard library and can be used by including the appropriate header files. Library functions simplify programming by providing a set of well-tested and efficient routines for various operations. Here are four commonly used C library functions:\par
+\par
+\b printf(): \b0 The printf function is used for formatted output. It allows you to display information on the console or write it to a file, formatted according to specified format specifiers.\par
+\par
+\b scanf(): \b0 The scanf function is used for formatted input. It allows you to read data from the console or a file, parsing it according to specified format specifiers.\par
+\par
+\b strlen(): \b0 The strlen function is used to determine the length of a null-terminated string (a sequence of characters).\par
+\par
+\b rand(): \b0 The rand function is used for generating pseudo-random numbers. It returns a random integer between 0 and RAND_MAX.\par
+\par
+These are just a few examples of C library functions. The C standard library provides a wide range of functions for various purposes, including mathematical operations, memory allocation, string manipulation, file handling, and more. To use these functions, you typically include the appropriate header file, as shown in the examples above, and then call the functions in your code.                                        \par
+\par
+
+\pard\sl360\slmult1\qj  \b Question-26. \f0\fs24 What will be the output of following program?\par
+
+\pard\li720\sl240\slmult1\qj #include <stdio.h>\par
+
+\pard\fi720\sl240\slmult1\qj void main() \par
+\{\par
+
+\pard\sl240\slmult1\qj  \tab   int x = printf("C is placement oriented Language") \f4\endash\f0  printf(\ldblquote Hi\rdblquote );\par
+ \tab   printf("%d %o %x", x,x,x);\par
+ \tab\}\par
+
+\pard\sa160\sl259\slmult0\b0\f3\fs22 ANS:-\par
+C is placement oriented language \par
+\par
+
+\pard\sl360\slmult1\qj\b Question-27. \f0\fs24 . What is the meaning of following statement?    printf(\ldblquote %d\rdblquote ,scanf(\ldblquote %d%d\rdblquote ,&a,&b));\par
+
+\pard\sa160\sl259\slmult0\b0\f3\fs22 ANS:-\par
+The statement is a bit unconventional and not recommended.\par
+\par
+\par
+
+\pard\sl360\slmult1\qj\b Question-28. \f0\fs24 What will be the output of following program?\par
+
+\pard\li720\sl240\slmult1\qj #include <stdio.h> \par
+void main() \par
+
+\pard\fi720\sl240\slmult1\qj\{ \par
+  printf(" \\"C %% FOR %% PLACEMENT\\""); \par
+\}\par
+
+\pard\sa160\sl259\slmult0\b0\f3\fs22 ANS:-\tab\par
+\ldblquote  C % FOR % PLACEMENT\rdblquote\par
+\par
+\par
+
+\pard\sl360\slmult1\qj QUESTION-29. \f0\fs24 Suppose distance between GLA University and Delhi is m km (to be entered by user), by BUS you can reach Delhi in 4 hours. Develop a \lquote C\rquote  program to calculate speed of bus.\par
+
+\pard\sa160\sl259\slmult0\f3\fs22 ANS:-\par
+#include<stdio.h>\par
+#include<conio.h>\par
+int main() \par
+\{ \par
+float m,s;\par
+   printf(\ldblquote  enter the distance between Delhi and GLA\rdblquote );\par
+   scanf(\ldblquote %f\rdblquote ,&m);\par
+   s=m/4;\par
+   printf(\ldblquote  the speed of bus %2f km/hr\rdblquote ,m);\par
+\}\par
+\par
+\par
+
+\pard\sl360\slmult1\qj Question-30.\f0\fs24  In an exam Satyam got 50 marks, Suman got 70 marks and Shyam got 80 marks, Write a \lquote C\rquote  program to find average marks of these three participants.\par
+
+\pard\sa160\sl259\slmult0\f3\fs22\par
+#include<stdio.h>\par
+#include<conio.h>\par
+int main() \{ int suman=70,satyam=50,shyam=80,avg;\par
+   avg=(suman+satyam+shyam)/3;\par
+ printf(\ldblquote avg marks is %f\rdblquote ,avg);\par
+return 0;\par
+\}\par
+\par
+\par
+
+\pard\sl360\slmult1\qj\b Question-31. \f0\fs24 One day, Mohan called Saurav and Sajal and gave some money to them, later he realized that money that was given to Saurav should be given to Sajal and vice-versa. Develop a \lquote C\rquote  program to help Mohan so that he can rectify his mistake.\par
+
+\pard\sa160\sl259\slmult0\b0\f3\fs22 ANS:-\par
+#include <stdio.h>\par
+#include<conio.h>\par
+\par
+int main() \{\par
+    double saurav_money, sajal_money, temp;\par
+\par
+    printf("Enter the amount given to Saurav: ");\par
+    scanf("%lf", &saurav_money);\par
+\par
+    printf("Enter the amount given to Sajal: ");\par
+    scanf("%lf", &sajal_money);\par
+\par
+    temp = saurav_money;\par
+    saurav_money = sajal_money;\par
+    sajal_money = temp;\par
+\par
+    printf("After rectification:\\n");\par
+    printf("Amount given to Saurav: %.2lf\\n", saurav_money);\par
+    printf("Amount given to Sajal: %.2lf\\n", sajal_money);\par
+\par
+    return 0;\par
+\}\par
+\par
+
+\pard\sl360\slmult1\qj\b Question-32. \f0\fs24 One day when I was going for a lunch, suddenly rain started, I was very hungry so started running with speed of 4km/h and it took 3 min to reach mess. Help me to develop a \lquote C\rquote  program to calculate distance travelled by me.\par
+
+\pard\sa160\sl259\slmult0\b0\f3\fs22 ANS:-\par
+#include<stdio.h>\par
+#include<conio.h>\par
+int main()\par
+\{  float s=4.0,t=3,d,T;\par
+  T=3/60;\par
+  d=s*T;\par
+  Printf(\ldblquote speed %f\rdblquote ,d);\par
+\}\par
+
+\pard\sl276\slmult1\b\f5 33) Can two or more escape sequences such as \\n and \\t be combined in a single line of program code ?\par
+\par
+\b0 Answer: Yes two or more escape sequences such as \\n and \\t can be used in a single line of code in c programming.\par
+\par
+\b 34) What are comments ? How can you insert it in c program ?\par
+\par
+\b0 Answer: Comments are extra information about the code for the programmer. It is not supposed to run during execution of  the program.\par
+There are two types of comments:\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1 Single line comment.\ul\par
+{\pntext\f8\'B7\tab}\ulnone Multiline comment.\ul\par
+
+\pard\sl276\slmult1\b Single line comment:\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone\b0 In this type of comment we comment a single line of code.\ul\par
+{\pntext\f8\'B7\tab}\ulnone We use // in starting of the line we want to comment.\ul\par
+{\pntext\f8\'B7\tab}\ulnone Example:\ul\par
+
+\pard\li720\sl276\slmult1\ulnone // printf("hello class");\par
+
+\pard\sl276\slmult1\ul\b Multi line comment:\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone\b0 In this type of comment we comment  more than one line of code \ul\par
+{\pntext\f8\'B7\tab}\ulnone We use /*in starting of portion we want to comment and */ at last of the portion.\ul\par
+{\pntext\f8\'B7\tab}\ulnone Example:\ul\par
+
+\pard\li720\sl276\slmult1\ulnone  /*int a,b;\par
+a= 20;\par
+b= a*6;\par
+printf("b is %d",b);*/\par
+\par
+
+\pard\sl276\slmult1\b 35) What is wrong in this statement?\par
+      scanf("%d", number);\par
+\b0\par
+Answer: In this statement there is no & sign before variable number due to which  value entered by user cannot be assigned to the variable number.\par
+The correct syntax should be like:\par
+scanf("%d",&number);\par
+\par
+\b 36) What will be the output?\par
+        #include<studio.h>\par
+         int main()\par
+         \{\par
+         if(sizeof(int)>-1)\par
+         \{\par
+          printf("Yes");\par
+         \}\par
+         else\par
+         \{\par
+          printf("No");\par
+         \}\par
+         return 0;\par
+         \}\par
+\b0\par
+Answer: The output will be "Yes" because we know that sizeof function gives size of the data type so here size of int can be 2 or 4 which is greater than -1 so condition of if statement is satisfied and it would enter the block of if statement and then it will print Yes.\par
+\b\par
+37) Point out which of the following variable names are valid:\par
+    gross-salary,INTEREST , salary of emp,avg.,thereisbookinmysoup\par
+\b0\par
+Answer:\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1 gross-salary: It contains hyphen which is not allowed in variable name of c.\ul\par
+{\pntext\f8\'B7\tab}\ulnone salary of emp: It contains spaces which is not considerable in variable name of c.\ul\par
+{\pntext\f8\'B7\tab}\ulnone avg.: It contains . Which cannot be used in variable name\ul\par
+
+\pard\sl276\slmult1\ulnone\b 38) Tom works at an aquarium shop on Saturdays. One Saturday, when Tom gets to work, he is asked to clean a 175-gallon reef tank. His first job is to drain the tank. He puts a hose into the tank and starts a siphon. Tom wonders if the tank will finish draining before he leaves work. He measures the amount of water that is draining out and finds that 12.5 gallons drain out in 30 minutes. So, he figures that the rate is 25 gallons per hour. Develop a \lquote C\rquote  program to help Tom to calculate time required to completely clean tank.\par
+\par
+\b0 Answer: \par
+include<studio.h>\par
+int main()\par
+\{\par
+int R,T,TV;\par
+TV= 175;\par
+R= 25;\par
+T= TV/R;\par
+printf("Time for draining complete tank :- %d hours",T);\par
+return 0;\par
+\}\par
+\par
+\b\f6 39) The percent y (in decimal form) of battery power remaining x hours after you turn on a laptop computer is y = \f7\u8722?\f6 0.2 x + 1. Develop a \lquote C\rquote  program to calculate after how many hours the battery power is at 75%?\f5\par
+\b0\lang9\par
+Answer:\par
+include<studio.h>\par
+int main()\par
+\{\par
+int x,y;\par
+y= 75;\par
+x=-( (1-y)/0.2);\par
+printf("battery will drain after %d hours",x);\par
+return 0;\par
+\}\par
+\par
+\par
+
+\pard\sl240\slmult1\qj\f0\fs24\par
+\b Q40.Which of the following is used to convert the high level language in machine language in a single go?\par
+a. Compiler\tab\tab b.Interpreter       \par
+c. Linker\tab\tab d.Assembler \par
+\b0\par
+ANS:- [A]\par
+\par
+\b Q 41. What is the format specifier for an Octal Number?\par
+a.%0\tab  \tab b.%d   \par
+   \par
+c. %o\tab\tab d. %e\par
+ANS:- [C]\b0\par
+Q 42. Which format specifier is used to print the exponent value upto 2 decimal places.\par
+a. %e\tab b.%.2f \tab c. %f\tab\tab d.%.2e \line    ANS:- [B]\par
+\par
+\b Q 43. Which of the following is not a basic data type?\par
+a. char\par
+b. array     \par
+c. float\tab\par
+d. int\par
+\b0 ANS:- [B]\par
+\par
+\b Q 44. What is the output of following code?\par
+#include<stdio.h>\par
+void main()\par
+\{\par
+  int x=0;\par
+  x= printf("\\"hello\\b\\"");\par
+  printf(\ldblquote %d\rdblquote ,x);\par
+\}\par
+a. hello7     b. \ldblquote hello\rdblquote 7\tab  c. \ldblquote hell\rdblquote 8      d. hell8 \par
+\b0 ANS:- [C]\par
+    \par
+\b Q 45.  What is the output of following code?\par
+#include<stdio.h>\par
+void main()\par
+\{\par
+  int b,c=5 ;\par
+  int(\ldblquote %d , %d\rdblquote , b,c);\par
+\}\par
+a. 5, 5\tab\tab\tab   b. 5, 5.000000\tab\par
+c. Garbage, 5.000000       d. Garbage, 5 \par
+\b0 ANS:- [D]\par
+\b\par
+Q46. Which of the following is an identifier?\par
+a. &fact      b. Basic_pay    c. enum         d. 1sum \par
+\b0  ANS:- [B]\par
+\par
+\b Q 47. What is the output of the following program?\par
+#include<stdio.h>\par
+void main()\par
+\{\par
+   char x, a=\rquote c\rquote ;\par
+   x=printf("%c",a);\par
+   printf(\ldblquote %d\rdblquote ,x);\par
+\}\par
+a. c1\tab\tab b. cgarbage                            \par
+c. 1\tab\tab c. c\par
+
+\pard\sl360\slmult1\qj\b0 ANS:- [a is  correct]\par
+\par
+\b Q48. Perform the following conversion from Decimal to other number as directed-\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl360\slmult1\qj\tx720 (365.55)\sub 10\nosupersub  =  (?)\sub 2  \nosupersub\par
+{\pntext\f8\'B7\tab}(453.65)\sub 10\nosupersub  =  (?)\sub 8 \nosupersub  \par
+{\pntext\f8\'B7\tab}(5164.12)\sub 10\nosupersub  = (?)\sub 16\nosupersub\par
+{\pntext\f8\'B7\tab}(23.65)\sub 10\nosupersub  =  (?)\sub 5\nosupersub\par
+{\pntext\f8\'B7\tab}(772)\sub 10\nosupersub  =       (?)\sub 7\nosupersub\par
+
+\pard\sl360\slmult1\qj\b0 ANS:-  a)  101101101.10001100110011001101\par
+(b) 705.51463146314631463146\par
+(c)  142C.1EB851EB851EB851EB85\par
+(d) 43.31111111111111111111\par
+(e) 2152\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl360\slmult1\qj\tx720\par
+
+\pard\sl360\slmult1\qj\b Q49. Covert the following numbers to decimal number system-\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li720\sl360\slmult1\qj\tx720 (325.54)\sub 6\nosupersub  = (?)\sub 10\nosupersub\par
+{\pntext\f8\'B7\tab}(1001010110101.1110101)\sub 2\nosupersub  = (?)\sub 10\nosupersub\par
+{\pntext\f8\'B7\tab}(742.72)\sub 8\nosupersub  = (?)\sub 10\nosupersub\par
+{\pntext\f8\'B7\tab}(AC94.C5)\sub 16\nosupersub  = (?)\sub 10\nosupersub\b0\par
+
+\pard\sl360\slmult1\qj A.49.\par
+       (a) 125.944\par
+       (b) 4789.9140625\par
+       (c) 482.90625\par
+       (d) 44180.76953125\par
+\b Q50. Perform the following conversion from Hexadecimal to other number as directed-\par
+
+\pard\li720\sl360\slmult1\qj  (DB56.CD4)\sub 16\nosupersub  = (?)\sub 2,\nosupersub    (?)\sub 8\nosupersub ,   (?)\sub 4    \nosupersub\par
+\b0 ANS:- (?)\sub 2\nosupersub =(1101101101010110.110011010100)\sub 2\par
+\nosupersub (?)\sub 8\nosupersub =(33353032.332)\sub 8\nosupersub\par
+(?)\sub 4\nosupersub =(3123112311.23)\sub 4\par
+
+\pard\sl360\slmult1\qj\nosupersub\b Q51. Perform the following conversion from octal to other number as directed-\par
+
+\pard\li720\sl360\slmult1\qj (473.42)\sub 8\nosupersub  = (?)\sub 2\nosupersub ,   (?)\sub 10,\nosupersub    (?)\sub 16\nosupersub ,   (?)\sub 5 \par
+\nosupersub\b0 ANS:-  (?)\sub 2\nosupersub =(100111001011.100010)\sub 2\nosupersub\par
+(?)\sub 10\nosupersub =(311.132812510)\sub 10\nosupersub\par
+(?)\sub 16\nosupersub =(9CBD.82)\sub 16\par
+\nosupersub (?)\sub 5\nosupersub =(21441.3313...)\sub 5\par
+
+\pard\sl360\slmult1\qj\nosupersub\b Q52. Find the value of A?\par
+
+\pard{\pntext\f8\'B7\tab}{\*\pn\pnlvlblt\pnf8\pnindent360{\pntxtb\'B7}}\fi-360\li1080\sl360\slmult1\qj (23)\sub 10\nosupersub  = (17)\sub A\nosupersub  \sub\par
+{\pntext\f8\'B7\tab}\nosupersub\b0 ANS:- 10\super 1\nosupersub +10\super 0 \nosupersub = 20+3 = (23)\sub 10\nosupersub  =(23)\sub A \nosupersub , SO  A = 10\sub\par
+{\pntext\f8\'B7\tab}\nosupersub\b (21)\sub 16\nosupersub  = (41\sub )A\nosupersub  \b0\par
+{\pntext\f8\'B7\tab}ANS:- 16\super 1\nosupersub +16\super 0\nosupersub  = 32+1 = (33)\sub 10 \nosupersub =(33)\sub A \nosupersub , SO A = 10\par
+{\pntext\f8\'B7\tab}\b (32)\sub 8\nosupersub  = (101)\sub A\nosupersub  \b0\par
+{\pntext\f8\'B7\tab}ANS:- 8\super 1\nosupersub +8\super 0\nosupersub  =24+2 = (26)\sub 10 \nosupersub =(26)\sub A \nosupersub ,SO A = 10\par
+
+\pard\sl360\slmult1\qj\b\par
+Q53:  What will be the output of following program? Assume integer is of 2 bytes\par
+void main()\{\par
+int  a=32770;\par
+printf(\ldblquote %d,a);\par
+\}\par
+\b0 ANS:- #include<stdio.h>\par
+int main ()\par
+\{\par
+\tab int a=32770;\par
+printf("%d",a);\par
+return 0;\par
+\}\par
+\b output:- 32770\par
+\b0\par
+
+\pard\sl240\slmult1\qj\b Q54: #include <stdio.h>\par
+ int main()\par
+\{\par
+ float c = 5.0;\par
+ printf ("Temperature in Fahrenheit is %.2f", (9/5)*c + 32);\par
+ return 0;\par
+\}\par
+\b0 output:- Temperature in Fahrenheit is 41.00\par
+
+\pard\sl360\slmult1\qj\par
+
+\pard\sl240\slmult1\qj\par
+
+\pard\sa200\sl276\slmult1\f3\fs22\par
+}
+ 
